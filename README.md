@@ -44,15 +44,15 @@ static $profilerDir = '/tmp/xdebug';
 
 nginx虚拟主机配置
 server{
-server_name www.xdebug.com;
-root /home/chidl/workspace/project/webgrind;
-location / {
-index index.html index.php;
-}
-location ~ \.php$ {
-fastcgi_pass 127.0.0.1:9000;
-#fastcgi_pass unix:/var/run/php5-fpm.sock;
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-include fastcgi_params;
-}
+    server_name www.xdebug.com;
+    root /home/chidl/workspace/project/webgrind;
+    location / {
+        index index.html index.php;
+    }
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:9000;
+        #fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
 }
